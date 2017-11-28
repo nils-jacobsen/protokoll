@@ -1,0 +1,150 @@
+\documentclass[11pt,a4paper,oneside]{report}
+\usepackage{ngerman}
+\usepackage[latin1]{inputenc}
+\usepackage{latexsym,amssymb,mathtools,amstext}
+
+\begin{document}
+
+\begin{center}
+  \Huge
+   Versuch 1 \\[5mm]
+   {\bf Pohlversuch}
+\end{center}
+
+\normalsize
+
+\begin{center}
+\begin{tabular}{|ll|ll|} \hline
+  {\bf Nils Jacobsen:}  & Leon Plickat \\
+  {\bf Duchgeführt am:} 23.11.2017\\ \hline
+\end{tabular}
+\end{center}
+
+
+\section*{Einleitung}
+Dem Pohl'schen Resonator liegt das physikalische Phänomen einer gedämpften, mechanischen, harmonischen Schwingung zugrunde. 
+Derartige Schwingungen spielen eine wichtige Rolle zum Verstädnis mechanischer Grundlagen. Darüber hinaus lassen sich einige Erkenntnisse über mechanische Schwingungen auf andere Teilgebiete der Physik übertragen, wenn es z.B. um Schwingungsvorgäne in Atomen und Festkörpern oder elektro-magnetische Schwingungen geht.
+Der Pohlversuch soll zum Verständnis von mechanischen Schwingungen i.A. beitragen und außerdem im Umgang mit linearen Differentialgleichungen, Phasenverschiebungen und Resonanzerscheinungen schulen. 
+
+\section*{Theorie}
+Zunächst wird die freie Schwingung also ohne Resonanzeinflüsse betrachtet: 
+
+Der Beschleunigung des Oszillators wirkt stehts die Rückstellkraft entgegen, welche proportional zur Auslenkung wirkt. Auch Reibungseinflüsse dürfen nicht vernachlässigt werden. 
+Diese können zum einen gezielt z.B. durch eine Wirbelstrombremse angesteuert werden, treten jedoch zwangsläufig wegen der Luftreibung auf. 
+Somit ergibt sich die folgende lineare DGL:
+
+\begin{align}
+m \cdot \ddot{x} + \beta \cdot \dot{x} +  D \cdot x = 0
+\end{align} 
+
+In dieser Darstellung ist $m$ die Masse des schwingenden Systems, die idealisiert als punktförmig angenommen wird.
+$\beta$ ist die Dämpfungskonstante der Schwingung und $D$ ist die Schwingungskonstante. 
+
+Setzt man $\frac{D}{m} =\omega_0^2$ und $2\gamma = \frac{\beta}{m}$, ergibt sich für die DGL:
+
+\begin{align}
+\ddot{x} + 2\gamma \cdot \dot{x} + \omega_0^2 \cdot x = 0
+\end{align}
+
+Dann ist die Lösung mit dem Exponentialansatz:
+
+\begin{align}
+x(t)= e^{-\gamma \cdot t} \cdot \lbrack c_1 e^{\sqrt{\gamma^2-\omega_0 ^2}\cdot t} + c_2 e^{\sqrt{\gamma^2-\omega_0^2} \cdot t} \rbrack
+\end{align}
+Vgl. Demtröder I S.335ff.
+
+An dieser Stelle können drei verschiedene Fälle betrachtet werden.
+
+%\[\gamma < \omega_0
+  %\gamma > \omega_0
+  %\gamma= \omega_0 \]  
+  
+In dem hier betrachteten Experiment ist der Fall $\gamma < \omega_0 $  relevant.
+
+Setze $\omega_d^2=\omega_0^2-\gamma^2$
+Dann ergibt sich für die Schwingungsgleichung die Funktion:
+
+\begin{align}
+ x(t) = x_0 e^{-\gamma \cdot t} \cdot \cos(\omega_d \cdot t + \phi)
+\end{align}
+
+Das Ergebnis ist also ein Kosinus-Schwingung deren Amplitude exponentiell abnimmt. 
+
+Die Abnahme kann durch das logarithmische Dekrement beschrieben werden. 
+
+Es gilt:
+
+\begin{align}
+\frac{x(t+T)}{x(t)} = e^{-\gamma \cdot T}
+\end{align} 
+
+Hierbei ist T die Dauer eines Schwingungsdruchgangs.
+
+Das logarithmische Dekrement $\delta$ ist dann definiert als:
+
+\begin{align}
+\delta = \gamma\cdot T
+\end{align}
+
+Für den  zweiten Teil des Experiments wird keine freie Schwingung mehr betrachtet, sondern der Fall, dass der Oszillator eine andere Schwingung angeregt wird. 
+
+In diesem Fall wirkt zusätzlich eine peridosiche Kraft auf das schwingende System der Form
+$F=F_0 cos(\omega_e t)$. Dann ist die DGL:
+
+\begin{align}
+\ddot{x} + 2\gamma \cdot \dot{x} + \omega_0^2 \cdot x = K \cos(\omega_e t)
+\end{align}
+
+ (mit $K=\frac{F_0}{m} $)
+
+Die Lösung ist dann:
+\begin{align}
+x(t) = x_0 e^{-\gamma \cdot t} \cdot \cos(sqrt{\omega_0^2 - \gamma^2}  \cdot t + \phi) + x_s \cdot \cos( \omega_e \cdot t + \phi_s)
+\end{align} 
+
+Der erste Kosinus Term ist der des Eigenschwingvorgangs und konvergiert wegen der reellwertigen Exponentialfunktion als Vorfaktor gegen $0$ für große $t$ . Dann reicht es, den zweiten Kosinusterm zu betrachten. Dieser beschreibt die stationäre Schwingung die durch den Errgeger erzeugt wird. $\omega_e$ ist die Errgerfrequenz. Die Phasenverschiebung $\phi_s$ und die Amplitude $x_s$ lassen sich dann durch bereits bekannte Konstanten ausdrücken.
+
+Es gilt: 
+
+\begin{align}
+x_s= \frac{K}{\sqrt{(\omega_0^2 -\omega_e^2)^2 +(\gamma \omega_e)^2}}
+\end{align}
+und 
+\begin{align}
+\phi_s= \arctan(\frac{2 \gamma \omega_e}{\omega_0^2 - \omega_e^2}
+\end{align}
+
+Es folgt, dass die Schwingungsamplitude von der Erregerfrequenz, der Eigenfrequenz des Schwingsystems und der Dämpfung abhängen.
+
+Die Amplitude erreicht für die Resonanzfrequenz $\omega_r= \sqrt{\omega_0^2-2\gamma^2}$ das Maximum. Bei einer geringen Dämpfung ist $\omega_r \approx \omega_d$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+\section*{Durchführung}
+
+
+\section*{Auswertung}
+
+
+
+\section*{Einordnung der Ergebnisse}
+
+\section*{Literatur}
+%\begin{thebibliography}{1}
+%\bibitem{1} Wolfgang Demtröder, \emph{Experimentalphysik 1 Mechanik und Wärme Lehre} S.328
+
+
+\end{document} 
